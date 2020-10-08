@@ -81,8 +81,8 @@ class UsersController extends Controller
     public function usersRoom()
     {
         return DB::table('rooms')
-                    ->join('users as u1','u1.User_ID','=','rooms.User_1_ID')
-                    ->join('users as u2','u2.User_ID','=','rooms.User_2_ID')
+                    ->leftjoin('users as u1','u1.User_ID','=','rooms.User_1_ID')
+                    ->leftjoin('users as u2','u2.User_ID','=','rooms.User_2_ID')
                     ->select('rooms.Room_ID','u1.User_ID as UID1','u1.Prefix as PF_1','u1.F_Name as F_1','u1.L_Name as L_1','u1.Province as PV_1','u2.User_ID as UID2','u2.Prefix as PF_2','u2.F_Name as F_2','u2.L_Name as L_2','u2.Province as PV_2','rooms.Room_Number')
                     ->orderBy('Room_ID', 'ASC')
                     ->get();

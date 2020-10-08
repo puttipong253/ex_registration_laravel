@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\RoomExport;
 use DB;
+
 class RoomController extends Controller
 {
     /**
@@ -19,7 +22,11 @@ class RoomController extends Controller
     {
         return DB::table('rooms')->count();
     }
-
+    public function exportRoom()
+    {
+        return Excel::download(new RoomExport, 'room.xlsx');
+        "Export succesfuly";
+    }
     /**
      * Show the form for creating a new resource.
      *

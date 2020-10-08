@@ -80,6 +80,8 @@ class TrainingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $training = Training::find($id);
+        $training->destroy($id);
+        return 'delete successfuly';
     }
 }

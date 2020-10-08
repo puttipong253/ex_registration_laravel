@@ -27,6 +27,7 @@ Route::put('room-update-1', 'HotelController@RoomUpdate1');
 Route::put('room-update-2', 'HotelController@RoomUpdate2');
 Route::get('export-users', 'UsersController@exportUser');
 Route::get('export-listUsers', 'UsersController@exportListUser');
+Route::get('export-room', 'RoomController@exportRoom');
 Route::get('users-training', 'UsersController@usersTraining');
 Route::get('users-hotel', 'UsersController@usersHotel');
 Route::get('users-room', 'UsersController@usersRoom');
